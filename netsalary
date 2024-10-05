@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    float basicPay, bonus, travelAllowance, netSalary;
+
+    
+    printf("Enter the basic pay: ");
+    scanf("%f", &basicPay);
+
+    
+    if (basicPay >= 0 && basicPay <= 10000) {
+        bonus = basicPay * 0.02;            
+        travelAllowance = basicPay * 0.01; 
+    } else if (basicPay >= 10001 && basicPay <= 25000) {
+        bonus = basicPay * 0.05;            
+        travelAllowance = basicPay * 0.02;  
+    } else if (basicPay >= 25001 && basicPay <= 50000) {
+        bonus = basicPay * 0.10;            
+        travelAllowance = basicPay * 0.03;  
+    } else if (basicPay >= 50001 && basicPay <= 100000) {
+        bonus = basicPay * 0.15;           
+        travelAllowance = basicPay * 0.05;  
+    } else if (basicPay > 100000) {
+        bonus = basicPay * 0.20;            
+        travelAllowance = basicPay * 0.05;  
+    } else {
+        printf("Invalid input for basic pay.\n");
+        return 1; 
+    }
+
+    
+    netSalary = basicPay + bonus + travelAllowance;
+
+    
+    printf("Basic Pay: %.2f\n", basicPay);
+    printf("Bonus: %.2f\n", bonus);
+    printf("Travel Allowance: %.2f\n", travelAllowance);
+    printf("Net Salary: %.2f\n", netSalary);
+
+    return 0;
+}
